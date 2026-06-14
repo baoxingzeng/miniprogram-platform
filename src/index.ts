@@ -1,0 +1,1 @@
+export { getPlatform } from "./platform";
