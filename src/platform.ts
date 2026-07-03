@@ -1,7 +1,7 @@
 // @ts-nocheck
 const platform = { value: null as null | { mp: unknown; name: string; } };
 
-export function getPlatform() {
+export function getPlatform(): NonNullable<typeof platform.value> | undefined {
     if (platform.value !== null) return platform.value;
     const u = "undefined", f = "function", r = "request";
 
