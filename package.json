@@ -1,10 +1,10 @@
 {
   "name": "miniprogram-platform",
-  "version": "0.0.1-beta",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "Xingzeng Bao",
-  "homepage": "",
-  "description": "",
+  "homepage": "https://github.com/baoxingzeng/miniprogram-platform",
+  "description": "Zero-dependency platform detection for mini-program ecosystems.",
   "type": "module",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
