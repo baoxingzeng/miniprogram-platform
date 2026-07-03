@@ -1,8 +1,11 @@
 // @ts-nocheck
+const platform = { value: null as null | { mp: unknown; name: string; } };
+
 export function getPlatform() {
-    let u = "undefined", f = "function", r = "request";
-    let platform: { mp: unknown; name: string; };
-    platform =
+    if (platform.value !== null) return platform.value;
+    const u = "undefined", f = "function", r = "request";
+
+    platform.value =
         (typeof wx !== u && typeof wx?.[r] === f && wx && { mp: wx, name: "WeChat" }) ||            // 微信
         (typeof my !== u && typeof my?.[r] === f && my && { mp: my, name: "Alipay" }) ||            // 支付宝
         (typeof qq !== u && typeof qq?.[r] === f && qq && { mp: qq, name: "QQ" }) ||                // QQ
@@ -16,5 +19,5 @@ export function getPlatform() {
         (typeof Taro !== u && typeof Taro?.[r] === f && Taro && { mp: Taro, name: "Taro" }) ||      // Taro
         undefined;
 
-    return platform;
+    return platform.value!;
 }
