@@ -8,7 +8,6 @@ export default [
         output: {
             dir: "dist/cjs",
             format: "cjs",
-            preserveModules: true,
         },
         plugins: [
             typescript({
@@ -25,7 +24,6 @@ export default [
         output: {
             dir: "dist/esm",
             format: "es",
-            preserveModules: true,
         },
         plugins: [
             typescript({
@@ -36,9 +34,8 @@ export default [
         ],
     },
 
-    // Types
     {
-        input: "dist/esm/types/index.d.ts",
+        input: "dist/esm/types/index.d.ts", // Types
         output: {
             file: "dist/index.d.ts",
             format: "es",
