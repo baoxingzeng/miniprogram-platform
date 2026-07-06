@@ -1,13 +1,13 @@
 {
   "name": "miniprogram-platform",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "Xingzeng Bao",
   "homepage": "https://github.com/baoxingzeng/miniprogram-platform",
   "description": "Zero-dependency platform detection for mini-program ecosystems.",
   "type": "module",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/miniprogram-platform.cjs.js",
+  "module": "dist/miniprogram-platform.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "README.md",
@@ -16,12 +16,23 @@
     "!dist/cjs/types/**/*",
     "!dist/esm/types/**/*"
   ],
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "sideEffects": false,
   "scripts": {
     "build": "rollup --config",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "miniprogram"
+  ],
   "devDependencies": {
+    "@rollup/plugin-terser": "^1.0.0",
     "@rollup/plugin-typescript": "^12.3.0",
     "rollup": "^4.61.0",
     "rollup-plugin-dts": "^6.4.1",

@@ -62,19 +62,23 @@ function getPlatform(): { mp: unknown; name: string } | undefined;
 
 ## 支持的平台
 
-| 平台名称  | 全局对象 | 说明              |
-| --------- | -------- | ----------------- |
-| WeChat    | `wx`     | 微信小程序        |
-| Alipay    | `my`     | 支付宝小程序      |
-| QQ        | `qq`     | QQ 小程序         |
-| JD        | `jd`     | 京东小程序        |
-| Baidu     | `swan`   | 百度智能小程序    |
-| ByteDance | `tt`     | 抖音 / 飞书小程序 |
-| Kwai      | `ks`     | 快手小程序        |
-| Qihu      | `qh`     | 360 小程序        |
-| RedNote   | `xhs`    | 小红书小程序      |
-| UniApp    | `uni`    | UniApp 跨端框架   |
-| Taro      | `Taro`   | Taro 跨端框架     |
+| 平台名称    | 全局对象 | 说明              |
+| ----------- | -------- | ----------------- |
+| WeChat      | `wx`     | 微信小程序        |
+| Alipay      | `my`     | 支付宝小程序      |
+| QQ          | `qq`     | QQ 小程序         |
+| JD          | `jd`     | 京东小程序        |
+| Baidu       | `swan`   | 百度智能小程序    |
+| ByteDance   | `tt`     | 抖音 / 飞书小程序 |
+| Kwai        | `ks`     | 快手小程序        |
+| Qihu        | `qh`     | 360 小程序        |
+| RedNote     | `xhs`    | 小红书小程序      |
+| DingTalk    | `dd`     | 钉钉小程序        |
+| BiliBili    | `bl`     | 哔哩哔哩小程序    |
+| FinClip     | `ft`     | 泰坪小程序        |
+| HarmonyASCF | `has`    | 鸿蒙元服务        |
+| UniApp      | `uni`    | UniApp 跨端框架   |
+| Taro        | `Taro`   | Taro 跨端框架     |
 
 检测逻辑：按优先级依次检查各平台的全局对象是否存在，并验证该对象是否具有 `request` 方法。匹配到第一个即返回，若全部未匹配则返回 `undefined`。
 
