@@ -13,14 +13,11 @@ npm install miniprogram-platform
 ```js
 import { getPlatform } from 'miniprogram-platform';
 
-const platform = getPlatform();
+const { mp, name } = getPlatform() || {};
 
-if (platform) {
-  console.log(platform.name); // "WeChat" | "Alipay" | "ByteDance" | ...
-  console.log(platform.mp);   // wx | my | tt | ...
-
-  // 直接调用平台 API，无需关心当前是哪个小程序环境
-  platform.mp.request({ url: 'https://api.example.com/data' });
+if (mp) {
+  console.log(name); // "WeChat" | "Alipay" | "ByteDance" | ...
+  mp.request({ url: 'https://api.example.com/data' });
 }
 ```
 
@@ -80,7 +77,8 @@ function getPlatform(): { mp: unknown; name: string } | undefined;
 | UniApp      | `uni`    | UniApp 跨端框架   |
 | Taro        | `Taro`   | Taro 跨端框架     |
 
-检测逻辑：按优先级依次检查各平台的全局对象是否存在，并验证该对象是否具有 `request` 方法。匹配到第一个即返回，若全部未匹配则返回 `undefined`。
+检测逻辑：按优先级依次检查各平台的全局对象是否存在，并验证该对象是否具有 `request` 方法（钉钉例外，其请求 API 为 `httpRequest`）。
+匹配到第一个即返回，若全部未匹配则返回 `undefined`。
 
 ## License
 
