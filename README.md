@@ -11,13 +11,13 @@ npm install miniprogram-platform
 ## 使用
 
 ```js
-import { getPlatform } from 'miniprogram-platform';
+import { getPlatform } from "miniprogram-platform";
 
 const { mp, name } = getPlatform() || {};
 
 if (mp) {
-  console.log(name); // "WeChat" | "Alipay" | "ByteDance" | ...
-  mp.request({ url: 'https://api.example.com/data' });
+    console.log(name); // "WeChat" | "Alipay" | "ByteDance" | ...
+    mp.request({ url: "https://api.example.com/data" });
 }
 ```
 
@@ -26,19 +26,19 @@ if (mp) {
 TypeScript 中可将 `mp` 断言为目标平台类型以获得完整的类型提示：
 
 ```ts
-if (platform?.name === 'WeChat') {
-  const wx = platform.mp as typeof wx;
-  wx.login({ ... });  // 完整的类型推断与补全
+if (platform?.name === "WeChat") {
+    const wx = platform.mp as typeof wx;
+    wx.login({ ... });  // 完整的类型推断与补全
 }
 ```
 
 JavaScript 中可通过 JSDoc 达到同样效果：
 
 ```js
-if (platform?.name === 'WeChat') {
-  /** @type {typeof wx} */
-  const wx = platform.mp;
-  wx.login({ ... });  // VSCode 中同样有类型提示
+if (platform?.name === "WeChat") {
+    /** @type {typeof wx} */
+    const wx = platform.mp;
+    wx.login({ ... });  // VSCode 中同样有类型提示
 }
 ```
 
