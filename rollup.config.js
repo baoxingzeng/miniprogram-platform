@@ -9,12 +9,13 @@ export default [
         output: {
             dir: "dist/cjs",
             format: "cjs",
+            preserveModules: true,
         },
         plugins: [
             typescript({
                 outDir: "dist/cjs",
                 declarationDir: "dist/cjs/types",
-                ignoreDeprecations: "6.0",
+                moduleResolution: "bundler",
             }),
         ],
     },
@@ -29,7 +30,7 @@ export default [
         plugins: [
             typescript({
                 declarationDir: "dist/types",
-                ignoreDeprecations: "6.0",
+                moduleResolution: "bundler",
             }),
         ],
     },
@@ -44,7 +45,7 @@ export default [
         plugins: [
             typescript({
                 declarationDir: "dist/types",
-                ignoreDeprecations: "6.0",
+                moduleResolution: "bundler",
             }),
             terser(),
         ],
@@ -56,12 +57,13 @@ export default [
         output: {
             dir: "dist/esm",
             format: "es",
+            preserveModules: true,
         },
         plugins: [
             typescript({
                 outDir: "dist/esm",
                 declarationDir: "dist/esm/types",
-                ignoreDeprecations: "6.0",
+                moduleResolution: "bundler",
             }),
         ],
     },
@@ -76,7 +78,7 @@ export default [
         plugins: [
             typescript({
                 declarationDir: "dist/types",
-                ignoreDeprecations: "6.0",
+                moduleResolution: "bundler",
             }),
         ],
     },
@@ -91,7 +93,7 @@ export default [
         plugins: [
             typescript({
                 declarationDir: "dist/types",
-                ignoreDeprecations: "6.0",
+                moduleResolution: "bundler",
             }),
             terser(),
         ],
