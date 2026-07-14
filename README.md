@@ -21,8 +21,6 @@ if (mp) {
 }
 ```
 
-> **注意**：`getPlatform()` 在首次调用时完成检测并缓存结果，后续调用均为 O(1)。
-
 TypeScript 中可将 `mp` 断言为目标平台类型以获得完整的类型提示：
 
 ```ts
@@ -77,10 +75,9 @@ function getPlatform(): { mp: unknown; name: string } | undefined;
 | UniApp      | `uni`    | UniApp 跨端框架   |
 | Taro        | `Taro`   | Taro 跨端框架     |
 
-检测逻辑：按优先级依次检查各平台的全局对象是否存在，并验证该对象是否具有 `request` 方法（钉钉例外，其请求 API 为 `httpRequest`）。
-匹配到第一个即返回，若全部未匹配则返回 `undefined`。
+检测逻辑：依次检查各平台的全局对象是否存在，并验证该对象是否具有 `request` 方法。匹配到第一个即返回，若全部未匹配则返回 `undefined`。
 
-## License
+## 开源协议
 
 MIT License
 
