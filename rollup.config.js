@@ -116,8 +116,50 @@ export default [
         ],
     },
 
+    // UMD (polyfill singlefile)
     {
-        input: "dist/esm/types/index.d.ts", // Types
+        input: "src/polyfill.ts",
+        output: {
+            file: "dist/miniprogram-platform.umd.js",
+            format: "umd",
+            name: "MPPF",
+        },
+        plugins: [
+            typescript({
+                declarationDir: "dist/types",
+                moduleResolution: "bundler",
+            }),
+            babel({
+                babelHelpers: "bundled",
+                extensions: [".js", ".jsx", ".es6", ".es", ".mjs", ".ts", ".tsx"],
+            }),
+        ],
+    },
+
+    // UMD (polyfill singlefile, minimized)
+    {
+        input: "src/polyfill.ts",
+        output: {
+            file: "dist/miniprogram-platform.umd.min.js",
+            format: "umd",
+            name: "MPPF",
+        },
+        plugins: [
+            typescript({
+                declarationDir: "dist/types",
+                moduleResolution: "bundler",
+            }),
+            babel({
+                babelHelpers: "bundled",
+                extensions: [".js", ".jsx", ".es6", ".es", ".mjs", ".ts", ".tsx"],
+            }),
+            terser(),
+        ],
+    },
+
+    // Types
+    {
+        input: "dist/esm/types/index.d.ts", 
         output: {
             file: "dist/index.d.ts",
             format: "es",

@@ -1,6 +1,6 @@
 {
   "name": "miniprogram-platform",
-  "version": "1.1.0",
+  "version": "1.1.9-beta",
   "license": "MIT",
   "author": "Xingzeng Bao",
   "homepage": "https://github.com/baoxingzeng/miniprogram-platform",
@@ -8,6 +8,8 @@
   "type": "module",
   "main": "dist/miniprogram-platform.cjs.js",
   "module": "dist/miniprogram-platform.esm.js",
+  "unpkg": "dist/miniprogram-platform.umd.js",
+  "jsdelivr": "dist/miniprogram-platform.umd.js",
   "types": "dist/index.d.ts",
   "files": [
     "README.md",
