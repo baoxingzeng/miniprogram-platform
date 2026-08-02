@@ -2,6 +2,8 @@
 
 零依赖、极简的跨小程序平台检测工具。将各平台特有的全局变量（`wx`、`my`、`tt` 等）统一抽象为 `{ mp, name }`，方便跨小程序库的开发。
 
+**[English](https://github.com/baoxingzeng/miniprogram-platform/blob/main/README.en.md)**
+
 ## 安装
 
 ```bash

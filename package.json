@@ -31,7 +31,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "miniprogram"
+    "miniprogram",
+    "wechat",
+    "alipay"
   ],
   "devDependencies": {
     "@babel/core": "^7.29.7",
