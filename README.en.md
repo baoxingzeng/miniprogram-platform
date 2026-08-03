@@ -64,8 +64,8 @@ function getPlatform(): { mp: unknown; name: string } | undefined;
 | QQ          | `qq`   | QQ Mini Program                 |
 | JD          | `jd`   | JD Mini Program                 |
 | Baidu       | `swan` | Baidu Smart Mini Program        |
-| ByteDance   | `tt`   | Douyin / Feishu Mini Program    |
-| Kwai        | `ks`   | Kuaishou Mini Program           |
+| ByteDance   | `tt`   | TikTok / Lark Mini Program      |
+| Kwai        | `ks`   | Kwai Mini Program               |
 | Qihu        | `qh`   | 360 Mini Program                |
 | RedNote     | `xhs`  | Xiaohongshu (RED) Mini Program  |
 | DingTalk    | `dd`   | DingTalk Mini Program           |
